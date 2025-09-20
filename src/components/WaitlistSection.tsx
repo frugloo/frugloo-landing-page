@@ -25,7 +25,8 @@ const WaitlistSection = () => {
     setIsSubmitting(true);
 
     try {
-      const formData = new FormData();
+      // Properly encode form data for Netlify
+      const formData = new URLSearchParams();
       formData.append("form-name", "waitlist");
       formData.append("email", email);
 
@@ -34,7 +35,7 @@ const WaitlistSection = () => {
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",
         },
-        body: new URLSearchParams(formData as any).toString(),
+        body: formData.toString(),
       });
 
       if (response.ok) {
@@ -111,7 +112,7 @@ const WaitlistSection = () => {
             <input type="hidden" name="form-name" value="waitlist" />
             <p className="hidden">
               <label>
-                Don’t fill this out if you’re human: <input name="bot-field" />
+                Don't fill this out if you're human: <input name="bot-field" />
               </label>
             </p>
 
