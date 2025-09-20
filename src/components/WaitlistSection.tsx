@@ -12,8 +12,8 @@ const WaitlistSection = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
-    if (!email || !email.includes("@")) {
+    
+    if (!email || !email.includes('@')) {
       toast({
         title: "Invalid email",
         description: "Please enter a valid email address.",
@@ -23,27 +23,32 @@ const WaitlistSection = () => {
     }
 
     setIsSubmitting(true);
-
+    
+    // Submit to Netlify forms
+    const formData = new FormData();
+    formData.append('email', email);
+    formData.append('form-name', 'waitlist');
+    
     try {
-      // Submit to Netlify using fetch
-      await fetch("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams({
-          "form-name": "waitlist",
-          email: email,
-        }).toString(),
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(formData as any).toString()
       });
-
-      setIsSubmitted(true);
-      toast({
-        title: "You're on the list!",
-        description: "We'll notify you when Frugloo is ready.",
-      });
+      
+      if (response.ok) {
+        setIsSubmitted(true);
+        toast({
+          title: "You're on the list!",
+          description: "We'll notify you when Frugloo is ready.",
+        });
+      } else {
+        throw new Error('Form submission failed');
+      }
     } catch (error) {
       toast({
-        title: "Error",
-        description: "Something went wrong. Please try again.",
+        title: "Something went wrong",
+        description: "Please try again or contact support.",
         variant: "destructive",
       });
     } finally {
@@ -62,11 +67,11 @@ const WaitlistSection = () => {
                 Welcome to the waitlist!
               </h2>
               <p className="text-xl text-foreground-light">
-                You'll be among the first to know when Frugloo launches.
+                You'll be among the first to know when Frugloo launches. 
                 Get ready to transform your financial life!
               </p>
             </div>
-
+            
             <div className="flex justify-center items-center space-x-6 text-foreground-muted">
               <div className="flex items-center space-x-2">
                 <div className="w-2 h-2 bg-primary rounded-full"></div>
@@ -99,25 +104,29 @@ const WaitlistSection = () => {
               <span className="text-foreground">waitlist</span>
             </h2>
             <p className="text-xl text-foreground-light leading-relaxed">
-              Be the first to experience the future of personal finance.
+              Be the first to experience the future of personal finance. 
               Get early access and exclusive updates on our launch.
             </p>
           </div>
 
           {/* Email Form */}
-          <form
-            name="waitlist"
-            method="POST"
-            data-netlify="true"
+          <form 
+            name="waitlist" 
+            method="POST" 
+            data-netlify="true" 
             data-netlify-honeypot="bot-field"
-            onSubmit={handleSubmit}
-            className="animate-slide-up"
-            style={{ animationDelay: "0.3s" }}
+            onSubmit={handleSubmit} 
+            className="animate-slide-up" 
+            style={{ animationDelay: '0.3s' }}
           >
-            {/* Hidden fields required by Netlify */}
+            {/* Hidden fields for Netlify */}
             <input type="hidden" name="form-name" value="waitlist" />
-            <input type="hidden" name="bot-field" />
-
+            <div style={{ display: 'none' }}>
+              <label>
+                Don't fill this out if you're human: <input name="bot-field" />
+              </label>
+            </div>
+            
             <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
               <div className="relative flex-1">
                 <Mail className="absolute left-4 top-1/2 transform -translate-y-1/2 text-foreground-muted w-5 h-5" />
@@ -131,8 +140,8 @@ const WaitlistSection = () => {
                   required
                 />
               </div>
-              <Button
-                type="submit"
+              <Button 
+                type="submit" 
                 disabled={isSubmitting}
                 className="btn-hero py-4 px-8 text-lg"
               >
@@ -142,7 +151,7 @@ const WaitlistSection = () => {
           </form>
 
           {/* Trust Badges */}
-          <div className="mt-12 flex justify-center items-center space-x-8 text-sm text-foreground-muted animate-slide-up" style={{ animationDelay: "0.6s" }}>
+          <div className="mt-12 flex justify-center items-center space-x-8 text-sm text-foreground-muted animate-slide-up" style={{ animationDelay: '0.6s' }}>
             <div className="flex items-center space-x-2">
               <div className="w-2 h-2 bg-success rounded-full"></div>
               <span>No spam, ever</span>
