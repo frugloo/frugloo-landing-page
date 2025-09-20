@@ -1,30 +1,42 @@
-import { Brain, Target, Heart, Bell } from "lucide-react";
+import { Brain, Target, Heart, Bell, Receipt, PiggyBank } from "lucide-react";
 
 const FeaturesSection = () => {
   const features = [
     {
       icon: Target,
       title: "Debt Clarity",
-      description: "See exactly where your money goes and what you owe.",
-      detail: "Get crystal-clear insights into your spending patterns and debt obligations with intelligent categorization and visual breakdowns."
+      description: "Stop wondering where your money went every month.",
+      detail: "Finally see the complete picture of your debts and spending in one simple dashboard that actually makes sense."
     },
     {
       icon: Brain,
-      title: "AI Guidance",
-      description: "Smart recommendations tailored to your financial goals.",
-      detail: "Our AI analyzes your spending habits and provides personalized advice to help you make better financial decisions every day."
+      title: "AI-Driven Decisions",
+      description: "Get smart advice that fits your real lifestyle.",
+      detail: "Our AI learns how you spend and suggests realistic changes you can actually stick to without feeling deprived."
     },
     {
       icon: Heart,
       title: "Fun Mentor Buddy",
-      description: "A friendly companion that makes budgeting enjoyable.",
-      detail: "Meet your personal finance buddy who celebrates your wins, guides you through challenges, and keeps you motivated on your journey."
+      description: "Your personal cheerleader for financial wins.",
+      detail: "Meet your friendly money mentor who celebrates every small victory and gently nudges you back on track when you slip."
     },
     {
       icon: Bell,
       title: "Smart Reminders",
-      description: "Never miss a payment or budget goal again.",
-      detail: "Intelligent notifications that learn your patterns and remind you of important deadlines, goals, and opportunities to save."
+      description: "Never get caught off guard by bills again.",
+      detail: "Intelligent alerts that learn your patterns and remind you about payments before they're due, not after."
+    },
+    {
+      icon: Receipt,
+      title: "Smart Expense Tracking",
+      description: "Automatic categorization that actually works.",
+      detail: "Watch your expenses organize themselves while you focus on living, not bookkeeping or manual data entry."
+    },
+    {
+      icon: PiggyBank,
+      title: "Budget Planning",
+      description: "Create budgets you'll want to follow.",
+      detail: "Build realistic spending plans that work with your income and goals, not against your human nature."
     }
   ];
 
@@ -44,7 +56,7 @@ const FeaturesSection = () => {
         </div>
 
         {/* Features Grid */}
-        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto">
           {features.map((feature, index) => (
             <div 
               key={feature.title}

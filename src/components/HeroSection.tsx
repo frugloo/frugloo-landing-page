@@ -13,45 +13,57 @@ const HeroSection = () => {
   return (
     <section className="relative min-h-screen bg-background overflow-hidden flex items-center justify-center pt-20">
       {/* Floating Currency Elements */}
-      <div className="absolute inset-0 pointer-events-none">
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
         {/* Currency Notes */}
         <img 
           src={currencyNote} 
           alt="" 
-          className="absolute top-32 left-12 w-32 h-20 opacity-10 float-currency"
+          className="absolute top-20 left-8 w-24 h-16 opacity-20 float-currency"
           style={{ animationDelay: '0s' }}
         />
         <img 
           src={currencyNote} 
           alt="" 
-          className="absolute top-64 right-16 w-28 h-18 opacity-15 float-currency"
+          className="absolute top-40 right-12 w-32 h-20 opacity-15 float-currency"
           style={{ animationDelay: '2s' }}
         />
         <img 
           src={currencyNote} 
           alt="" 
-          className="absolute bottom-32 left-32 w-24 h-15 opacity-8 float-currency"
+          className="absolute bottom-40 left-16 w-28 h-18 opacity-25 float-currency"
           style={{ animationDelay: '4s' }}
+        />
+        <img 
+          src={currencyNote} 
+          alt="" 
+          className="absolute bottom-20 right-32 w-20 h-14 opacity-20 float-currency"
+          style={{ animationDelay: '6s' }}
         />
         
         {/* Gold Coins */}
         <img 
           src={goldCoin} 
           alt="" 
-          className="absolute top-48 right-32 w-16 h-16 opacity-20 float-coin"
+          className="absolute top-32 right-20 w-16 h-16 opacity-30 float-coin"
           style={{ animationDelay: '1s' }}
         />
         <img 
           src={goldCoin} 
           alt="" 
-          className="absolute bottom-48 right-12 w-20 h-20 opacity-15 float-coin"
+          className="absolute bottom-32 right-8 w-20 h-20 opacity-25 float-coin"
           style={{ animationDelay: '3s' }}
         />
         <img 
           src={goldCoin} 
           alt="" 
-          className="absolute top-80 left-64 w-12 h-12 opacity-10 float-coin"
+          className="absolute top-60 left-32 w-14 h-14 opacity-20 float-coin"
           style={{ animationDelay: '5s' }}
+        />
+        <img 
+          src={goldCoin} 
+          alt="" 
+          className="absolute top-96 right-48 w-12 h-12 opacity-15 float-coin"
+          style={{ animationDelay: '7s' }}
         />
       </div>
 
