@@ -95,7 +95,7 @@ const HeroSection = () => {
           <div className="mt-16 flex justify-center items-center space-x-8 text-foreground-muted animate-slide-up" style={{ animationDelay: '0.9s' }}>
             <div className="flex items-center space-x-2">
               <div className="w-2 h-2 bg-success rounded-full"></div>
-              <span className="text-sm">Free to join</span>
+              <span className="text-sm">Bank-level security</span>
             </div>
             <div className="flex items-center space-x-2">
               <div className="w-2 h-2 bg-primary rounded-full"></div>
@@ -103,7 +103,7 @@ const HeroSection = () => {
             </div>
             <div className="flex items-center space-x-2">
               <div className="w-2 h-2 bg-accent rounded-full"></div>
-              <span className="text-sm">Privacy first</span>
+              <span className="text-sm">Real-time insights</span>
             </div>
           </div>
         </div>
