@@ -30,7 +30,7 @@ const WaitlistSection = () => {
       setIsSubmitting(false);
       toast({
         title: "You're on the list!",
-        description: "We'll notify you when Furgloo is ready.",
+        description: "We'll notify you when Frugloo is ready.",
       });
     }, 1000);
   };
@@ -46,7 +46,7 @@ const WaitlistSection = () => {
                 Welcome to the waitlist!
               </h2>
               <p className="text-xl text-foreground-light">
-                You'll be among the first to know when Furgloo launches. 
+                You'll be among the first to know when Frugloo launches. 
                 Get ready to transform your financial life!
               </p>
             </div>
@@ -125,22 +125,6 @@ const WaitlistSection = () => {
             <div className="flex items-center space-x-2">
               <div className="w-2 h-2 bg-accent rounded-full"></div>
               <span>Privacy protected</span>
-            </div>
-          </div>
-
-          {/* Stats */}
-          <div className="mt-16 grid grid-cols-3 gap-8 max-w-lg mx-auto animate-slide-up" style={{ animationDelay: '0.9s' }}>
-            <div className="text-center">
-              <div className="text-3xl font-bold gradient-text mb-2">500+</div>
-              <div className="text-sm text-foreground-muted">Early members</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold gradient-text mb-2">AI</div>
-              <div className="text-sm text-foreground-muted">Powered insights</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold gradient-text mb-2">Free</div>
-              <div className="text-sm text-foreground-muted">To get started</div>
             </div>
           </div>
         </div>

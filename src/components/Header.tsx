@@ -22,7 +22,7 @@ const Header = () => {
             <div className="w-8 h-8 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center">
               <span className="text-white font-bold text-lg">F</span>
             </div>
-            <span className="text-2xl font-bold gradient-text">furgloo</span>
+            <span className="text-2xl font-bold gradient-text">frugloo</span>
           </div>
 
           {/* Desktop Navigation */}
