@@ -89,7 +89,7 @@ const WaitlistSection = () => {
           </div>
 
           {/* Email Form */}
-          <form onSubmit={handleSubmit} className="animate-slide-up" style={{ animationDelay: '0.3s' }}>
+          <form onSubmit={handleSubmit} className="animate-slide-up" style={{ animationDelay: '0.3s' }} data-netlify="true">
             <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
               <div className="relative flex-1">
                 <Mail className="absolute left-4 top-1/2 transform -translate-y-1/2 text-foreground-muted w-5 h-5" />
