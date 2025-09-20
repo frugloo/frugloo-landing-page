@@ -23,6 +23,13 @@
   </head>
 
   <body>
+    <!-- Hidden form for Netlify form detection -->
+    <form name="waitlist" netlify netlify-honeypot="bot-field" hidden>
+      <input type="email" name="email" />
+      <input name="bot-field" />
+    </form>
+    
+    
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
