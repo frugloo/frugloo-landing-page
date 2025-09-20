@@ -10,10 +10,17 @@ const WaitlistSection = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const { toast } = useToast();
 
+  // Function to encode form data for Netlify
+  const encode = (data: Record<string, string>) => {
+    return Object.keys(data)
+      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&");
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
-    if (!email || !email.includes("@")) {
+    
+    if (!email || !email.includes('@')) {
       toast({
         title: "Invalid email",
         description: "Please enter a valid email address.",
@@ -23,40 +30,31 @@ const WaitlistSection = () => {
     }
 
     setIsSubmitting(true);
-
+    
     try {
-      // Properly encode form data for Netlify
-      const formData = new URLSearchParams();
-      formData.append("form-name", "waitlist");
-      formData.append("email", email);
-
-      const response = await fetch("/", {
+      // Submit to Netlify forms
+      await fetch("/", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
-        },
-        body: formData.toString(),
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode({
+          "form-name": "waitlist",
+          "email": email,
+        }),
       });
 
-      if (response.ok) {
-        setIsSubmitted(true);
-        setEmail("");
-        toast({
-          title: "You're on the list!",
-          description: "We'll notify you when Frugloo is ready.",
-        });
-      } else {
-        throw new Error("Form submission failed");
-      }
+      setIsSubmitted(true);
+      setIsSubmitting(false);
+      toast({
+        title: "You're on the list!",
+        description: "We'll notify you when Frugloo is ready.",
+      });
     } catch (error) {
-      console.error("Error submitting form:", error);
+      setIsSubmitting(false);
       toast({
         title: "Something went wrong",
-        description: "Please try again later.",
+        description: "Please try again or contact support.",
         variant: "destructive",
       });
-    } finally {
-      setIsSubmitting(false);
     }
   };
 
@@ -71,9 +69,24 @@ const WaitlistSection = () => {
                 Welcome to the waitlist!
               </h2>
               <p className="text-xl text-foreground-light">
-                You'll be among the first to know when Frugloo launches.
+                You'll be among the first to know when Frugloo launches. 
                 Get ready to transform your financial life!
               </p>
+            </div>
+            
+            <div className="flex justify-center items-center space-x-6 text-foreground-muted">
+              <div className="flex items-center space-x-2">
+                <div className="w-2 h-2 bg-primary rounded-full"></div>
+                <span className="text-sm">Early access</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <div className="w-2 h-2 bg-secondary rounded-full"></div>
+                <span className="text-sm">Exclusive features</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <div className="w-2 h-2 bg-accent rounded-full"></div>
+                <span className="text-sm">Special pricing</span>
+              </div>
             </div>
           </div>
         </div>
@@ -93,28 +106,30 @@ const WaitlistSection = () => {
               <span className="text-foreground">waitlist</span>
             </h2>
             <p className="text-xl text-foreground-light leading-relaxed">
-              Be the first to experience the future of personal finance.
+              Be the first to experience the future of personal finance. 
               Get early access and exclusive updates on our launch.
             </p>
           </div>
 
-          {/* Email Form with Netlify integration */}
-          <form
+          {/* Email Form - Netlify Forms Integration */}
+          <form 
             name="waitlist"
             method="POST"
             data-netlify="true"
             data-netlify-honeypot="bot-field"
-            onSubmit={handleSubmit}
-            className="animate-slide-up"
-            style={{ animationDelay: "0.3s" }}
+            onSubmit={handleSubmit} 
+            className="animate-slide-up" 
+            style={{ animationDelay: '0.3s' }}
           >
-            {/* Hidden fields for Netlify */}
+            {/* Hidden field for Netlify form identification */}
             <input type="hidden" name="form-name" value="waitlist" />
-            <p className="hidden">
+            
+            {/* Hidden honeypot field for spam protection */}
+            <div style={{ display: 'none' }}>
               <label>
                 Don't fill this out if you're human: <input name="bot-field" />
               </label>
-            </p>
+            </div>
 
             <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
               <div className="relative flex-1">
@@ -129,8 +144,8 @@ const WaitlistSection = () => {
                   required
                 />
               </div>
-              <Button
-                type="submit"
+              <Button 
+                type="submit" 
                 disabled={isSubmitting}
                 className="btn-hero py-4 px-8 text-lg"
               >
@@ -140,10 +155,7 @@ const WaitlistSection = () => {
           </form>
 
           {/* Trust Badges */}
-          <div
-            className="mt-12 flex justify-center items-center space-x-8 text-sm text-foreground-muted animate-slide-up"
-            style={{ animationDelay: "0.6s" }}
-          >
+          <div className="mt-12 flex justify-center items-center space-x-8 text-sm text-foreground-muted animate-slide-up" style={{ animationDelay: '0.6s' }}>
             <div className="flex items-center space-x-2">
               <div className="w-2 h-2 bg-success rounded-full"></div>
               <span>No spam, ever</span>
