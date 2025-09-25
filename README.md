@@ -12,7 +12,7 @@ To enable the waitlist email functionality, you need to set up a Formspree form:
 2. Create a new form and copy the form ID
 3. Create a `.env` file in the root directory with:
    ```
-   VITE_FORMSPREE_FORM_ID=your_form_id_here
+   VITE_FORMSPREE_URL=https://formspree.io/f/your_form_id_here
    ```
 
 ### Development

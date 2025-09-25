@@ -44,7 +44,10 @@ const WaitlistSection = () => {
       });
 
       if (!response.ok) {
-        throw new Error("Form submission failed");
+        const errorText = await response.text();
+        throw new Error(
+          `Form submission failed: ${response.status} - ${errorText}`,
+        );
       }
 
       setIsSubmitted(true);
