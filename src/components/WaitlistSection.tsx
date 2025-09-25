@@ -10,13 +10,6 @@ const WaitlistSection = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const { toast } = useToast();
 
-  // Function to encode form data for Netlify
-  const encode = (data: Record<string, string>) => {
-    return Object.keys(data)
-      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-      .join("&");
-  };
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
@@ -32,15 +25,27 @@ const WaitlistSection = () => {
     setIsSubmitting(true);
 
     try {
-      // Submit to Netlify forms
-      await fetch("/", {
+      // Submit to Formspree
+      const formspreeUrl = import.meta.env.VITE_FORMSPREE_URL;
+      if (!formspreeUrl) {
+        throw new Error("Formspree form ID not configured");
+      }
+
+      const response = await fetch(`${formspreeUrl}`, {
         method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: encode({
-          "form-name": "waitlist",
-          email: email,
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email,
+          _subject: "New Waitlist Signup - Frugloo",
+          _replyto: email,
         }),
       });
+
+      if (!response.ok) {
+        throw new Error("Form submission failed");
+      }
 
       setIsSubmitted(true);
       setIsSubmitting(false);
@@ -49,6 +54,7 @@ const WaitlistSection = () => {
         description: "We'll notify you when Frugloo is ready.",
       });
     } catch (error) {
+      console.error("Form submission error:", error);
       setIsSubmitting(false);
       toast({
         title: "Something went wrong",
@@ -117,26 +123,12 @@ const WaitlistSection = () => {
             </p>
           </div>
 
-          {/* Email Form - Netlify Forms Integration */}
+          {/* Email Form - Formspree Integration */}
           <form
-            name="waitlist"
-            method="POST"
-            data-netlify="true"
-            data-netlify-honeypot="bot-field"
             onSubmit={handleSubmit}
             className="animate-slide-up"
             style={{ animationDelay: "0.3s" }}
           >
-            {/* Hidden field for Netlify form identification */}
-            <input type="hidden" name="form-name" value="waitlist" />
-
-            {/* Hidden honeypot field for spam protection */}
-            <div style={{ display: "none" }}>
-              <label>
-                Don't fill this out if you're human: <input name="bot-field" />
-              </label>
-            </div>
-
             <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
               <div className="relative flex-1">
                 <Mail className="absolute left-4 top-1/2 transform -translate-y-1/2 text-foreground-muted w-5 h-5" />
