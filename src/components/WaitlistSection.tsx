@@ -77,10 +77,10 @@ const WaitlistSection = () => {
           <div className="max-w-2xl mx-auto">
             <div className="mb-8 animate-fade-scale">
               <CheckCircle className="w-16 h-16 text-secondary mx-auto mb-4" />
-              <h2 className="text-4xl font-bold text-foreground mb-4">
+              <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
                 You're in! 🎉
               </h2>
-              <p className="text-xl text-foreground-light leading-relaxed">
+              <p className="text-lg sm:text-xl text-foreground-light leading-relaxed">
                 Welcome to the Frugloo family! You'll be the first to know when
                 we launch and get exclusive early access to features that will
                 transform your money game.
@@ -110,18 +110,18 @@ const WaitlistSection = () => {
   return (
     <section
       id="waitlist"
-      className="py-24 bg-gradient-to-br from-primary/5 via-background to-secondary/5"
+      className="py-16 sm:py-24 bg-gradient-to-br from-primary/5 via-background to-secondary/5"
     >
       <div className="container mx-auto px-4 text-center">
         <div className="max-w-2xl mx-auto">
           {/* Header */}
-          <div className="mb-12 animate-fade-scale">
-            <h2 className="text-5xl font-bold mb-6">
+          <div className="mb-8 sm:mb-12 animate-fade-scale">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
               <span className="gradient-text">Get early access</span>
               <br />
               <span className="text-foreground">to Frugloo</span>
             </h2>
-            <p className="text-xl text-foreground-light leading-relaxed">
+            <p className="text-lg sm:text-xl text-foreground-light leading-relaxed">
               Join thousands of people who are ready to finally take control of
               their money. Get early access, exclusive features, and special
               launch pricing.

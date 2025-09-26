@@ -50,19 +50,22 @@ const FeaturesSection = () => {
   return (
     <section
       id="features"
-      className="py-24 bg-gradient-to-b from-surface to-background"
+      className="py-16 sm:py-24 bg-gradient-to-b from-surface to-background"
       role="region"
       aria-labelledby="features-heading"
     >
       <div className="container mx-auto px-4">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 id="features-heading" className="text-5xl font-bold mb-6">
+        <div className="text-center mb-12 sm:mb-16">
+          <h2
+            id="features-heading"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6"
+          >
             <span className="gradient-text">Everything you need</span>
             <br />
             <span className="text-foreground">to win with money</span>
           </h2>
-          <p className="text-xl text-foreground-light max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-xl text-foreground-light max-w-2xl mx-auto leading-relaxed">
             Stop struggling with spreadsheets and confusing apps. Get AI that
             actually understands your money goals and helps you achieve them
             faster.
@@ -93,10 +96,10 @@ const FeaturesSection = () => {
               </div>
 
               {/* Content */}
-              <h3 className="text-2xl font-bold text-foreground mb-3">
+              <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-3">
                 {feature.title}
               </h3>
-              <p className="text-lg text-foreground-light mb-4">
+              <p className="text-base sm:text-lg text-foreground-light mb-4">
                 {feature.description}
               </p>
               <p className="text-foreground-muted leading-relaxed">

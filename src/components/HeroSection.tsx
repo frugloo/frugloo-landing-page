@@ -12,7 +12,7 @@ const HeroSection = () => {
 
   return (
     <section
-      className="relative min-h-screen bg-gradient-to-br from-background via-primary/5 to-secondary/5 overflow-hidden flex items-center justify-center pt-20"
+      className="relative min-h-screen bg-gradient-to-br from-background via-primary/5 to-secondary/5 overflow-hidden flex items-center justify-center pt-24 sm:pt-20"
       role="main"
       aria-labelledby="hero-heading"
     >
@@ -76,7 +76,7 @@ const HeroSection = () => {
           {/* Main Headline */}
           <h1
             id="hero-heading"
-            className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 animate-fade-scale"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 animate-fade-scale"
           >
             <span className="gradient-text">Master your money</span>
             <br />
@@ -85,7 +85,7 @@ const HeroSection = () => {
 
           {/* Sub-headline */}
           <p
-            className="text-xl md:text-2xl text-foreground-light mb-12 max-w-2xl mx-auto leading-relaxed animate-slide-up"
+            className="text-lg sm:text-xl md:text-2xl text-foreground-light mb-12 max-w-2xl mx-auto leading-relaxed animate-slide-up"
             style={{ animationDelay: "0.3s" }}
           >
             Finally, a finance app that understands your real life. Get out of
@@ -97,7 +97,7 @@ const HeroSection = () => {
           <div className="animate-slide-up" style={{ animationDelay: "0.6s" }}>
             <Button
               onClick={scrollToWaitlist}
-              className="btn-hero text-xl px-12 py-6 rounded-2xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+              className="btn-hero text-lg sm:text-xl px-8 sm:px-12 py-4 sm:py-6 rounded-2xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
               aria-label="Get early access to Frugloo AI finance app"
             >
               Get Early Access
