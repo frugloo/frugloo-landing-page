@@ -50,32 +50,45 @@ const FeaturesSection = () => {
     <section
       id="features"
       className="py-24 bg-gradient-to-b from-surface to-background"
+      role="region"
+      aria-labelledby="features-heading"
     >
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-5xl font-bold mb-6">
-            <span className="gradient-text">Features that</span>
+          <h2 id="features-heading" className="text-5xl font-bold mb-6">
+            <span className="gradient-text">AI-powered features</span>
             <br />
-            <span className="text-foreground">make budgeting simple</span>
+            <span className="text-foreground">
+              that transform your finances
+            </span>
           </h2>
           <p className="text-xl text-foreground-light max-w-2xl mx-auto leading-relaxed">
-            Everything you need to take control of your finances in one
-            beautiful, easy-to-use app.
+            Revolutionary artificial intelligence meets personal finance. Get
+            intelligent insights, automated tracking, and personalized guidance
+            that actually works.
           </p>
         </div>
 
         {/* Features Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+        <div
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto"
+          role="list"
+          aria-label="AI-powered financial features"
+        >
           {features.map((feature, index) => (
-            <div
+            <article
               key={feature.title}
               className="feature-card group animate-fade-scale"
               style={{ animationDelay: `${index * 0.2}s` }}
+              role="listitem"
             >
               {/* Icon */}
               <div className="mb-6">
-                <div className="w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-2xl flex items-center justify-center group-hover:scale-110 transition-all duration-300 shadow-lg group-hover:shadow-xl">
+                <div
+                  className="w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-2xl flex items-center justify-center group-hover:scale-110 transition-all duration-300 shadow-lg group-hover:shadow-xl"
+                  aria-hidden="true"
+                >
                   <feature.icon className="w-8 h-8 text-white" />
                 </div>
               </div>
@@ -90,7 +103,7 @@ const FeaturesSection = () => {
               <p className="text-foreground-muted leading-relaxed">
                 {feature.detail}
               </p>
-            </div>
+            </article>
           ))}
         </div>
 

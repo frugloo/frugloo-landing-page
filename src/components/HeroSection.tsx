@@ -11,7 +11,11 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative min-h-screen bg-gradient-to-br from-background via-primary/5 to-secondary/5 overflow-hidden flex items-center justify-center pt-20">
+    <section
+      className="relative min-h-screen bg-gradient-to-br from-background via-primary/5 to-secondary/5 overflow-hidden flex items-center justify-center pt-20"
+      role="main"
+      aria-labelledby="hero-heading"
+    >
       {/* Floating Currency Elements */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         {/* Currency Notes */}
@@ -70,10 +74,13 @@ const HeroSection = () => {
       <div className="container mx-auto px-4 text-center relative z-10">
         <div className="max-w-4xl mx-auto">
           {/* Main Headline */}
-          <h1 className="text-6xl md:text-8xl font-bold mb-6 animate-fade-scale">
+          <h1
+            id="hero-heading"
+            className="text-6xl md:text-8xl font-bold mb-6 animate-fade-scale"
+          >
             <span className="gradient-text">Track your money</span>
             <br />
-            <span className="text-foreground">instantly.</span>
+            <span className="text-foreground">with AI intelligence.</span>
           </h1>
 
           {/* Sub-headline */}
@@ -81,7 +88,8 @@ const HeroSection = () => {
             className="text-xl md:text-2xl text-foreground-light mb-12 max-w-2xl mx-auto leading-relaxed animate-slide-up"
             style={{ animationDelay: "0.3s" }}
           >
-            Debt clarity. AI guidance. Fun buddy to keep you on track.
+            Revolutionary AI-powered personal finance. Smart debt tracking,
+            intelligent budgeting, and your personal AI financial mentor.
           </p>
 
           {/* CTA Button */}
@@ -89,8 +97,9 @@ const HeroSection = () => {
             <Button
               onClick={scrollToWaitlist}
               className="btn-hero text-xl px-12 py-6 rounded-2xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+              aria-label="Join the AI-powered personal finance app waitlist"
             >
-              Join the Waitlist
+              Join the AI Finance Waitlist
             </Button>
           </div>
 
@@ -98,18 +107,31 @@ const HeroSection = () => {
           <div
             className="mt-16 flex justify-center items-center space-x-8 text-foreground-muted animate-slide-up"
             style={{ animationDelay: "0.9s" }}
+            role="complementary"
+            aria-label="Key features and benefits"
           >
             <div className="flex items-center space-x-2">
-              <div className="w-2 h-2 bg-secondary rounded-full"></div>
-              <span className="text-sm font-medium">Smart Money</span>
+              <div
+                className="w-2 h-2 bg-secondary rounded-full"
+                aria-hidden="true"
+              ></div>
+              <span className="text-sm font-medium">
+                AI-Powered Intelligence
+              </span>
             </div>
             <div className="flex items-center space-x-2">
-              <div className="w-2 h-2 bg-primary rounded-full"></div>
-              <span className="text-sm font-medium">AI-powered</span>
+              <div
+                className="w-2 h-2 bg-primary rounded-full"
+                aria-hidden="true"
+              ></div>
+              <span className="text-sm font-medium">Smart Automation</span>
             </div>
             <div className="flex items-center space-x-2">
-              <div className="w-2 h-2 bg-gradient-to-r from-primary to-secondary rounded-full"></div>
-              <span className="text-sm font-medium">Stress Free</span>
+              <div
+                className="w-2 h-2 bg-gradient-to-r from-primary to-secondary rounded-full"
+                aria-hidden="true"
+              ></div>
+              <span className="text-sm font-medium">Personalized Guidance</span>
             </div>
           </div>
         </div>

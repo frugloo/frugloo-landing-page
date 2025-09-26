@@ -19,35 +19,44 @@ const Header = () => {
   };
 
   return (
-    <header className="fixed top-0 w-full z-50 bg-background/95 backdrop-blur-md border-b border-secondary/20 shadow-sm">
+    <header
+      className="fixed top-0 w-full z-50 bg-background/95 backdrop-blur-md border-b border-secondary/20 shadow-sm"
+      role="banner"
+    >
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <button
             onClick={() => scrollToSection("hero")}
             className="flex items-center hover:opacity-80 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary/20 rounded-lg p-2 hover:bg-primary/5"
-            aria-label="Frugloo - Go to home"
+            aria-label="Frugloo AI-Powered Personal Finance App - Go to home"
           >
             <img
               src="/logo-eclipse.svg"
-              alt="Frugloo"
+              alt="Frugloo - AI-Powered Personal Finance Tracker"
               className="h-14 w-auto"
             />
           </button>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav
+            className="hidden md:flex items-center space-x-8"
+            role="navigation"
+            aria-label="Main navigation"
+          >
             <button
               onClick={() => scrollToSection("features")}
               className="text-foreground-light hover:text-secondary transition-colors duration-300 font-medium text-lg relative group"
+              aria-label="View AI-powered features"
             >
-              Features
+              AI Features
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-secondary group-hover:w-full transition-all duration-300"></span>
             </button>
             <Button
               variant="outline"
               onClick={() => scrollToSection("waitlist")}
               className="btn-secondary text-lg px-6 py-3"
+              aria-label="Join the AI finance app waitlist"
             >
               Join Waitlist
             </Button>
