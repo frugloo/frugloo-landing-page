@@ -78,9 +78,9 @@ const HeroSection = () => {
             id="hero-heading"
             className="text-6xl md:text-8xl font-bold mb-6 animate-fade-scale"
           >
-            <span className="gradient-text">Track your money</span>
+            <span className="gradient-text">Master your money</span>
             <br />
-            <span className="text-foreground">with AI intelligence.</span>
+            <span className="text-foreground">with AI that gets you.</span>
           </h1>
 
           {/* Sub-headline */}
@@ -88,8 +88,9 @@ const HeroSection = () => {
             className="text-xl md:text-2xl text-foreground-light mb-12 max-w-2xl mx-auto leading-relaxed animate-slide-up"
             style={{ animationDelay: "0.3s" }}
           >
-            Revolutionary AI-powered personal finance. Smart debt tracking,
-            intelligent budgeting, and your personal AI financial mentor.
+            Finally, a finance app that understands your real life. Get out of
+            debt faster, save more effortlessly, and build wealth with AI that
+            learns your habits.
           </p>
 
           {/* CTA Button */}
@@ -97,9 +98,9 @@ const HeroSection = () => {
             <Button
               onClick={scrollToWaitlist}
               className="btn-hero text-xl px-12 py-6 rounded-2xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
-              aria-label="Join the AI-powered personal finance app waitlist"
+              aria-label="Get early access to Frugloo AI finance app"
             >
-              Join the AI Finance Waitlist
+              Get Early Access
             </Button>
           </div>
 
@@ -115,23 +116,21 @@ const HeroSection = () => {
                 className="w-2 h-2 bg-secondary rounded-full"
                 aria-hidden="true"
               ></div>
-              <span className="text-sm font-medium">
-                AI-Powered Intelligence
-              </span>
+              <span className="text-sm font-medium">Debt-Free Journey</span>
             </div>
             <div className="flex items-center space-x-2">
               <div
                 className="w-2 h-2 bg-primary rounded-full"
                 aria-hidden="true"
               ></div>
-              <span className="text-sm font-medium">Smart Automation</span>
+              <span className="text-sm font-medium">Smart Savings</span>
             </div>
             <div className="flex items-center space-x-2">
               <div
                 className="w-2 h-2 bg-gradient-to-r from-primary to-secondary rounded-full"
                 aria-hidden="true"
               ></div>
-              <span className="text-sm font-medium">Personalized Guidance</span>
+              <span className="text-sm font-medium">Wealth Building</span>
             </div>
           </div>
         </div>

@@ -47,18 +47,18 @@ const Header = () => {
             <button
               onClick={() => scrollToSection("features")}
               className="text-foreground-light hover:text-secondary transition-colors duration-300 font-medium text-lg relative group"
-              aria-label="View AI-powered features"
+              aria-label="View features that help you win with money"
             >
-              AI Features
+              Features
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-secondary group-hover:w-full transition-all duration-300"></span>
             </button>
             <Button
               variant="outline"
               onClick={() => scrollToSection("waitlist")}
               className="btn-secondary text-lg px-6 py-3"
-              aria-label="Join the AI finance app waitlist"
+              aria-label="Get early access to Frugloo"
             >
-              Join Waitlist
+              Get Early Access
             </Button>
           </nav>
 
@@ -90,7 +90,7 @@ const Header = () => {
                 onClick={() => scrollToSection("waitlist")}
                 className="btn-secondary w-full text-lg py-3"
               >
-                Join Waitlist
+                Get Early Access
               </Button>
             </nav>
           </div>

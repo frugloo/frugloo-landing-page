@@ -78,18 +78,19 @@ const WaitlistSection = () => {
             <div className="mb-8 animate-fade-scale">
               <CheckCircle className="w-16 h-16 text-secondary mx-auto mb-4" />
               <h2 className="text-4xl font-bold text-foreground mb-4">
-                Welcome to the waitlist!
+                You're in! 🎉
               </h2>
               <p className="text-xl text-foreground-light leading-relaxed">
-                You'll be among the first to know when Frugloo launches. Get
-                ready to transform your financial life!
+                Welcome to the Frugloo family! You'll be the first to know when
+                we launch and get exclusive early access to features that will
+                transform your money game.
               </p>
             </div>
 
             <div className="flex justify-center items-center space-x-6 text-foreground-muted">
               <div className="flex items-center space-x-2">
                 <div className="w-2 h-2 bg-primary rounded-full"></div>
-                <span className="text-sm font-medium">Early access</span>
+                <span className="text-sm font-medium">First access</span>
               </div>
               <div className="flex items-center space-x-2">
                 <div className="w-2 h-2 bg-secondary rounded-full"></div>
@@ -97,7 +98,7 @@ const WaitlistSection = () => {
               </div>
               <div className="flex items-center space-x-2">
                 <div className="w-2 h-2 bg-gradient-to-r from-primary to-secondary rounded-full"></div>
-                <span className="text-sm font-medium">Special pricing</span>
+                <span className="text-sm font-medium">Launch pricing</span>
               </div>
             </div>
           </div>
@@ -116,13 +117,14 @@ const WaitlistSection = () => {
           {/* Header */}
           <div className="mb-12 animate-fade-scale">
             <h2 className="text-5xl font-bold mb-6">
-              <span className="gradient-text">Join the</span>
+              <span className="gradient-text">Get early access</span>
               <br />
-              <span className="text-foreground">waitlist</span>
+              <span className="text-foreground">to Frugloo</span>
             </h2>
             <p className="text-xl text-foreground-light leading-relaxed">
-              Be the first to experience the future of personal finance. Get
-              early access and exclusive updates on our launch.
+              Join thousands of people who are ready to finally take control of
+              their money. Get early access, exclusive features, and special
+              launch pricing.
             </p>
           </div>
 
@@ -150,7 +152,7 @@ const WaitlistSection = () => {
                 disabled={isSubmitting}
                 className="btn-hero py-4 px-8 text-lg"
               >
-                {isSubmitting ? "Joining..." : "Join Waitlist"}
+                {isSubmitting ? "Getting Access..." : "Get Early Access"}
               </Button>
             </div>
           </form>
@@ -166,11 +168,11 @@ const WaitlistSection = () => {
             </div>
             <div className="flex items-center space-x-2">
               <div className="w-2 h-2 bg-primary rounded-full"></div>
-              <span className="font-medium">Unsubscribe anytime</span>
+              <span className="font-medium">Cancel anytime</span>
             </div>
             <div className="flex items-center space-x-2">
               <div className="w-2 h-2 bg-gradient-to-r from-primary to-secondary rounded-full"></div>
-              <span className="font-medium">Privacy protected</span>
+              <span className="font-medium">100% secure</span>
             </div>
           </div>
         </div>

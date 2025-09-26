@@ -8,25 +8,26 @@ export const seoConfig = {
   siteName: "Frugloo",
   siteUrl: "https://frugloo.com",
   siteDescription:
-    "Revolutionary AI-powered personal finance app that provides intelligent debt tracking, smart budgeting, and personalized financial guidance.",
+    "Finally, a finance app that understands your real life. Get out of debt faster, save more effortlessly, and build wealth with AI that learns your habits. Join thousands getting early access.",
 
-  // AI-focused keywords
+  // Benefit-focused keywords
   keywords: [
-    "AI personal finance",
-    "artificial intelligence budgeting",
-    "smart money tracker",
-    "AI financial advisor",
+    "get out of debt faster",
+    "build wealth with AI",
+    "smart money management",
+    "debt free journey",
+    "AI financial coach",
     "automated expense tracking",
-    "intelligent debt management",
-    "AI-powered budgeting app",
+    "intelligent budgeting",
     "personal finance AI",
-    "smart financial planning",
+    "early access finance app",
+    "money management app",
+    "financial freedom",
     "AI money mentor",
-    "fintech AI",
-    "automated financial guidance",
-    "intelligent budget planning",
-    "AI expense categorization",
-    "smart financial insights",
+    "smart savings",
+    "wealth building",
+    "debt payoff strategies",
+    "realistic budgeting",
   ],
 
   // Social media handles
@@ -40,9 +41,9 @@ export const seoConfig = {
   // Default meta tags
   defaultMeta: {
     title:
-      "Frugloo - AI-Powered Personal Finance Tracker | Smart Money Management",
+      "Frugloo - Master Your Money with AI That Gets You | Get Early Access",
     description:
-      "Revolutionary AI-powered personal finance app with intelligent debt tracking, smart budgeting, and personalized financial guidance. Join thousands using AI to transform their money management.",
+      "Finally, a finance app that understands your real life. Get out of debt faster, save more effortlessly, and build wealth with AI that learns your habits. Join thousands getting early access.",
     image: "https://frugloo.com/og-image.png",
     type: "website",
     locale: "en_US",
@@ -73,7 +74,7 @@ export const seoConfig = {
       applicationCategory: "FinanceApplication",
       operatingSystem: "Web, iOS, Android",
       description:
-        "AI-powered personal finance tracker with intelligent debt management, smart budgeting, and personalized financial guidance",
+        "Master your money with AI that gets you. Get out of debt faster, save more effortlessly, and build wealth with AI that learns your habits.",
       url: "https://frugloo.com/",
       offers: {
         "@type": "Offer",
@@ -83,12 +84,12 @@ export const seoConfig = {
           "Free AI-powered personal finance app with waitlist access",
       },
       featureList: [
-        "AI-driven financial decisions",
-        "Intelligent debt tracking",
-        "Smart expense categorization",
-        "Personalized budget planning",
-        "AI financial mentor",
-        "Automated bill reminders",
+        "Smart money moves with AI",
+        "Debt clarity and payoff strategies",
+        "Your personal money coach",
+        "Auto expense tracking",
+        "Smart budgets that work",
+        "Never miss a bill",
       ],
     },
   },
@@ -97,19 +98,21 @@ export const seoConfig = {
   pages: {
     home: {
       title:
-        "Frugloo - AI-Powered Personal Finance Tracker | Smart Money Management",
+        "Frugloo - Master Your Money with AI That Gets You | Get Early Access",
       description:
-        "Revolutionary AI-powered personal finance app with intelligent debt tracking, smart budgeting, and personalized financial guidance. Transform your money management with artificial intelligence.",
+        "Finally, a finance app that understands your real life. Get out of debt faster, save more effortlessly, and build wealth with AI that learns your habits. Join thousands getting early access.",
       keywords: [
-        "AI personal finance",
-        "artificial intelligence budgeting",
-        "smart money tracker",
-        "AI financial advisor",
+        "get out of debt faster",
+        "build wealth with AI",
+        "smart money management",
+        "debt free journey",
+        "AI financial coach",
         "automated expense tracking",
-        "intelligent debt management",
-        "AI-powered budgeting app",
+        "intelligent budgeting",
         "personal finance AI",
-        "smart financial planning",
+        "early access finance app",
+        "money management app",
+        "financial freedom",
         "AI money mentor",
       ],
     },
@@ -267,23 +270,23 @@ export function generateStructuredData(
             name: "What makes Frugloo different from other personal finance apps?",
             acceptedAnswer: {
               "@type": "Answer",
-              text: "Frugloo uses advanced AI technology to provide personalized financial guidance, intelligent debt tracking, and smart budgeting recommendations tailored to your lifestyle and spending patterns.",
+              text: "Frugloo is the first finance app that actually understands your real life. Our AI learns your habits and provides realistic advice you can stick to, helping you get out of debt faster and build wealth without feeling deprived.",
             },
           },
           {
             "@type": "Question",
-            name: "How does the AI financial advisor work?",
+            name: "How does the AI financial coach work?",
             acceptedAnswer: {
               "@type": "Answer",
-              text: "Our AI learns from your spending habits and financial goals to provide realistic, personalized advice that you can actually stick to, without feeling deprived or overwhelmed.",
+              text: "Your AI money coach learns your spending patterns and celebrates your wins while gently guiding you back on track. It provides realistic advice that works with your lifestyle, not against it, so you can actually stick to your financial goals.",
             },
           },
           {
             "@type": "Question",
-            name: "Is Frugloo free to use?",
+            name: "How do I get early access to Frugloo?",
             acceptedAnswer: {
               "@type": "Answer",
-              text: "Yes, Frugloo offers a free AI-powered personal finance tracking experience. Join our waitlist to get early access to all features.",
+              text: "Join our waitlist to get early access to Frugloo! You'll be among the first to experience AI-powered money management that actually works with your real life. Get exclusive features and special launch pricing.",
             },
           },
         ],
