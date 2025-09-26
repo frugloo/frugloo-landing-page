@@ -52,6 +52,16 @@ const WaitlistSection = () => {
 
       setIsSubmitted(true);
       setIsSubmitting(false);
+
+      // Track waitlist signup in Google Analytics
+      if (typeof window !== "undefined" && window.gtag) {
+        window.gtag("event", "waitlist_signup", {
+          event_category: "conversion",
+          event_label: "pre_launch",
+          value: 1,
+        });
+      }
+
       toast({
         title: "You're on the list!",
         description: "We'll notify you when Frugloo is ready.",
