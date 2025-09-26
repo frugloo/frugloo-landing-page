@@ -34,7 +34,7 @@ const Header = () => {
             <img
               src="/logo-eclipse.svg"
               alt="Frugloo - AI-Powered Personal Finance Tracker"
-              className="h-14 w-auto"
+              className="h-12 w-auto"
             />
           </button>
 

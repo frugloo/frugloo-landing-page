@@ -76,11 +76,11 @@ const HeroSection = () => {
           {/* Main Headline */}
           <h1
             id="hero-heading"
-            className="text-6xl md:text-8xl font-bold mb-6 animate-fade-scale"
+            className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 animate-fade-scale"
           >
             <span className="gradient-text">Master your money</span>
             <br />
-            <span className="text-foreground">with AI that gets you.</span>
+            <span className="text-foreground">with AI that gets you</span>
           </h1>
 
           {/* Sub-headline */}
