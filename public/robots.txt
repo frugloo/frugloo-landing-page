@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://frugloo.com/sitemap.xml
+Sitemap: https://www.frugloo.com/sitemap.xml
